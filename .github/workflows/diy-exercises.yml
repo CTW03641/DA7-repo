@@ -31,7 +31,7 @@ jobs:
         id: checkov
         uses: bridgecrewio/checkov-action@master
         with:
-          directory: ../../da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3a
+          directory: da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3a
           #file: example/tfplan.json # optional: provide the path for resource to be scanned. This will override the directory if both are provided.
           #check: CKV_AWS_1 # optional: run only a specific check_id. can be comma separated list
           #skip_check: CKV_AWS_2 # optional: skip a specific check_id. can be comma separated list
@@ -46,7 +46,7 @@ jobs:
           #download_external_modules: true # optional: download external terraform modules from public git repositories and terraform registry
           #repo_root_for_plan_enrichment: example/ #optional: Directory containing the hcl code used to generate a given terraform plan file. Use together with `file`
           #var_file: ./testdir/gocd.yaml # optional: variable files to load in addition to the default files. Currently only supported for source Terraform and Helm chart scans.
-          log_level: DEBUG # optional: set log level. Default WARNING
+          #log_level: DEBUG # optional: set log level. Default WARNING
           #config_file: path/this_file
           # baseline: cloudformation/.checkov.baseline # optional: Path to a generated baseline file. Will only report results not in the baseline.
           # container_user: 1000 # optional: Define what UID and / or what GID to run the container under to prevent permission issues
