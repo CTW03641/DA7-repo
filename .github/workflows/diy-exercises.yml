@@ -23,7 +23,7 @@ jobs:
       runs-on: self-hosted
       needs: greeting_job
       env:
-        DEPENDENCY_NMR: Hello
+        DEPENDENCY_NMR: 2
       steps:
         - name: "Test Dependency Job"
           run: echo "I am a dependent Job. My dependency number is $DEPENDENCY_NMR"
