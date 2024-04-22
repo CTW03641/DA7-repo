@@ -56,5 +56,8 @@ jobs:
     name: Unit tests
     runs-on: self-hosted
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
       - name: 
         run: pytest da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov # echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!"
