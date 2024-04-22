@@ -1,0 +1,20 @@
+name: Greeting data academy
+
+on:
+  push:
+    branches-ignore: [main]
+
+env:
+  DAY_OF_WEEK: <<FILL_ME>>
+
+jobs:
+  greeting_job:
+    runs-on: self-hosted
+    env:
+      GREETING: Hello
+    steps:
+      - name: "Say 'Hello Data Academy 7th edition, this is <today's weekday> 's first exercise! I'm <MY_NAME>!'"
+        run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise!"
+        env:
+          ACADEMY_TYPE: Data
+
