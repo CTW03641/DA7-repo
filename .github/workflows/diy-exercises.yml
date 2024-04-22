@@ -5,7 +5,8 @@ on:
     branches-ignore: [main]
 
 env:
-  DAY_OF_WEEK: <<FILL_ME>>
+  DAY_OF_WEEK: monday
+  MY_USERNAME: ${{ github.actor }}
 
 jobs:
   greeting_job:
@@ -13,7 +14,7 @@ jobs:
     env:
       GREETING: Hello
     steps:
-      - name: "Say 'Hello Data Academy 7th edition, this is <today's weekday> 's first exercise! I'm <MY_NAME>!'"
+      - name: "Say 'Hello Data Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!'"
         run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise!"
         env:
           ACADEMY_TYPE: Data
