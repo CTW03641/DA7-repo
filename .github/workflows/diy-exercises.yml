@@ -53,7 +53,8 @@ jobs:
           # use_enforcement_rules: true # optional - use enforcement rule configs from the platform
 
   unit_test_job:
+    name: Unit tests
     runs-on: self-hosted
     steps:
       - name: 
-        run: pytest da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py # echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!"
+        run: pytest da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py --cov # echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!"
