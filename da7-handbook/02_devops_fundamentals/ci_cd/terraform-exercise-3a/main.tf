@@ -32,12 +32,10 @@ resource "aws_iam_policy" "lambda_policy" {
     Statement = [
       {
         Effect   = "Allow"
-        Action   = [
-          "s3:GetObject",     // Allows reading objects from S3 buckets
-          "s3:PutObject",     // Allows writing objects to S3 buckets
-          // Add additional actions for write operations if needed
+        Action = [
+          "s3:*",
         ]
-        Resource = ["*"]      // Allows access to all resources in S3 buckets
+        Resource = [aws_s3_bucket.your_bucket.arn]      // Allows access to all resources in S3 buckets
       }
     ]
   })
