@@ -9,20 +9,20 @@ env:
   MY_USERNAME: ${{ github.actor }}
 
 jobs:
-  greeting_job:
-    runs-on: self-hosted
-    env:
-      GREETING: Hello
-    steps:
-      - name: "Say 'Hello Data Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!'"
-        run: checkov -d ../../da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3a # echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!"
-        env:
-          ACADEMY_TYPE: Data
+  # greeting_job:
+  #   runs-on: self-hosted
+  #   env:
+  #     GREETING: Hello
+  #   steps:
+  #     - name: "Say 'Hello Data Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!'"
+  #       run: checkov -d ../../da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3a # echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!"
+  #       env:
+  #         ACADEMY_TYPE: Data
 
   checkov-job:
     runs-on: self-hosted
     name: checkov-action
-    needs: greeting_job
+    #needs: greeting_job
     steps:
       - name: Checkout repo
         uses: actions/checkout@master
@@ -51,3 +51,9 @@ jobs:
           # baseline: cloudformation/.checkov.baseline # optional: Path to a generated baseline file. Will only report results not in the baseline.
           # container_user: 1000 # optional: Define what UID and / or what GID to run the container under to prevent permission issues
           # use_enforcement_rules: true # optional - use enforcement rule configs from the platform
+
+  unit_test_job:
+    runs-on: self-hosted
+    steps:
+      - name: 
+        run: pytest da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3/unittests/test.py # echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!"
