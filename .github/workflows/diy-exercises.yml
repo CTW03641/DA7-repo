@@ -22,6 +22,7 @@ jobs:
   checkov-job:
     runs-on: self-hosted
     name: checkov-action
+    needs: greeting_job
     steps:
       - name: Checkout repo
         uses: actions/checkout@master
