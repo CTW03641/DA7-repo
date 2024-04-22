@@ -15,7 +15,7 @@ jobs:
       GREETING: Hello
     steps:
       - name: "Say 'Hello Data Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!'"
-        run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise!"
+        run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $MY_USERNAME!"
         env:
           ACADEMY_TYPE: Data
 
