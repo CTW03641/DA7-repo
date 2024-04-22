@@ -19,3 +19,11 @@ jobs:
         env:
           ACADEMY_TYPE: Data
 
+  test_dependency_job:
+      runs-on: self-hosted
+      needs: greeting_job
+      env:
+        DEPENDENCY_NMR: Hello
+      steps:
+        - name: "Test Dependency Job"
+          run: echo "I am a dependent Job. My dependency number is $DEPENDENCY_NMR"
