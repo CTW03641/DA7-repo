@@ -1,7 +1,7 @@
 import sys
 from unittest.mock import patch, MagicMock
 
-sys.path.append('02_devops_fundamentals/ci_cd/terraform-exercise-3/code')
+sys.path.append('da7-handbook/02_devops_fundamentals/ci_cd/terraform-exercise-3/code')
 from function import upload_to_aws
 
 
